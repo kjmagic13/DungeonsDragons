@@ -1,0 +1,62 @@
+<%= form_for(@player) do |f| %>
+<% if @player.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@player.errors.count, "error") %> prohibited this player from being saved:</h2>
+
+	<ul>
+		<% @player.errors.full_messages.each do |message| %>
+		<li><%= message %></li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+
+<div class="field">
+	<%= f.label :name %><br>
+	<%= f.text_field :name %>
+</div>
+<div class="field">
+	<%= f.label :rank %><br>
+	<%= f.number_field :rank %>
+</div>
+<div class="field">
+	<%= f.label :class_name %><br>
+	<%= f.text_field :class_name %>
+</div>
+<div class="field">
+	<%= f.label :race %><br>
+	<%= f.text_field :race %>
+</div>
+<div class="field">
+	<%= f.label :alignment %><br>
+	<%= f.text_field :alignment %>
+</div>
+<div class="field">
+	<%= f.label :xp %><br>
+	<%= f.number_field :xp %>
+</div>
+
+<div class="">
+	<%= f.fields_for :player_spells do |ps| %>
+	<fieldset>
+		<p>
+			<%= ps.select :spell_id, Spell.all.map{ |s| [s.name, s.id] }, include_blank: '-' %>
+		</p>
+		<p>
+			<%= ps.label :level %>
+			<%= ps.select :level, (1..9).map{ |i| [i,i] }.unshift(['Class', -1], ['Cantrip', 0]) %>
+		</p>
+		<p>
+			<%= ps.label :remove %>
+			<%= ps.check_box :_destroy %>
+		</p>
+	</fieldset>
+	<% end %>
+</div>
+
+<div class="actions">
+	<p>
+		<%= f.submit %>
+	</p>
+</div>
+<% end %>

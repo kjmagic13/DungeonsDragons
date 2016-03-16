@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'New Spell', new_spell_path %>
+<%= content_tag :h2, 'Spells' %>
+
+<!-- Modal -->
+<div class="modal fade" id="spellModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+			</div>
+			<div class="modal-body"></div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th colspan="2"></th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% @spells.each do |spell| %>
+		<tr>
+			<td>
+				<%#= link_to spell.name, spell, data: { toggle: :modal, target: '#spellModal' } %>
+				<%= link_to spell.name, spell %>
+			</td>
+			<td><%= link_to 'Edit', edit_spell_path(spell) %></td>
+			<td><%= link_to 'Destroy', spell, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

@@ -1,0 +1,13 @@
+<div class="container">
+	<div class="page-header">
+
+		<!-- <h1>title</h1> -->
+
+		<ul class="nav nav-tabs">
+			<%#= content_tag :li, link_to('Home', root_path) %>
+			<%= content_tag :li, link_to('Players', players_path), class: ( params[:controller] == 'players' ? 'active' : nil ) %>
+			<%= content_tag :li, link_to('Spells', spells_path), class: ( params[:controller] == 'spells' ? 'active' : nil ) %>
+		</ul>
+		
+	</div>
+</div>

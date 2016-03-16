@@ -1,0 +1,17 @@
+<!-- 4:3 aspect ratio -->
+<div class="embed-responsive embed-responsive-4by3">
+	<%= content_tag :iframe, nil, src: @spell.roll20_link, class: 'embed-responsive-item' %>
+</div>
+
+<p>
+  <strong>Name:</strong>
+  <%= @spell.name %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @spell.link %>
+</p>
+
+<%= link_to 'Edit', edit_spell_path(@spell) %> |
+<%= link_to 'Back', spells_path %>

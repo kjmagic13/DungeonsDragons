@@ -1,0 +1,223 @@
+<p id="notice"><%= notice %></p>
+
+<div data-object="player" data-url="<%= player_path(@player) %>">
+	<div class="row">
+		<div class="col-sm-5 text-center">
+			<h3>
+				<%= rest_in_place @player, :name %>
+				<small>
+					<%= link_to raw('<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>'), edit_player_path(@player), title: 'Edit Player' %>
+				</small>
+			</h3>
+		</div>
+		<div class="col-sm-7">
+			<table class="table table-bordered table-condensed">
+				<tbody class="small">
+					<tr>
+						<td>
+							<strong>Class:</strong><br>
+							<%= rest_in_place @player, :class_name %>
+						</td>
+						<td>
+							<strong>Level:</strong><br>
+							<%= rest_in_place @player, :rank %>
+						</td>
+						<td>
+							<strong>Hit Points:</strong><br>
+							<center>
+								<%= rest_in_place @player, :hp, :input, true %> / <%= rest_in_place @player, :hp_max, :input, true %>
+							</center>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<strong>Race:</strong><br>
+							<%= rest_in_place @player, :race %>
+						</td>
+						<td>
+							<strong>Alignment:</strong><br>
+							<%= rest_in_place @player, :alignment %>
+						</td>
+						<td>
+							<strong>Experience Points:</strong><br>
+							<%= rest_in_place @player, :xp %>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-1">
+
+			<div class="row text-center">
+				<div class="col-xs-4 col-sm-12">
+					<h5 class="thumbnail">
+						<%= rest_in_place @player, :strength, :input, true %><br>
+						<small>
+							Strength
+						</small>
+					</h5>
+				</div>
+				<div class="col-xs-4 col-sm-12">
+					<h5 class="thumbnail">
+						<%= rest_in_place @player, :dexterity, :input, true %><br>
+						<small>
+							Dexterity
+						</small>
+					</h5>
+				</div>
+				<div class="col-xs-4 col-sm-12">
+					<h5 class="thumbnail">
+						<%= rest_in_place @player, :constitution, :input, true %><br>
+						<small>
+							Constitution
+						</small>
+					</h5>
+				</div>
+				<div class="col-xs-4 col-sm-12">
+					<h5 class="thumbnail">
+						<%= rest_in_place @player, :intelligence, :input, true %><br>
+						<small>
+							Intelligence
+						</small>
+					</h5>
+				</div>
+				<div class="col-xs-4 col-sm-12">
+					<h5 class="thumbnail">
+						<%= rest_in_place @player, :wisdom, :input, true %><br>
+						<small>
+							Wisdom
+						</small>
+					</h5>
+				</div>
+				<div class="col-xs-4 col-sm-12">
+					<h5 class="thumbnail">
+						<%= rest_in_place @player, :charisma, :input, true %><br>
+						<small>
+							Charisma
+						</small>
+					</h5>
+				</div>
+			</div>
+
+		</div>
+		<div class="col-sm-3">
+			<div class="panel panel-default">
+				<header class="panel-heading text-center">
+					Saving Throws
+				</header>
+				<table class="table table-striped table-condensed">
+					<tbody>
+						<tr>
+							<td>
+								attr
+							</td>
+						</tr>
+						<tr>
+							<td>
+								attr
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="panel panel-default">
+				<header class="panel-heading text-center">
+					Skills
+				</header>
+				<table class="table table-striped table-condensed">
+					<tbody>
+						<tr>
+							<td>
+								attr
+							</td>
+						</tr>
+						<tr>
+							<td>
+								attr
+							</td>
+						</tr>
+						<tr>
+							<td>
+								attr
+							</td>
+						</tr>
+						<tr>
+							<td>
+								attr
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="row text-center">
+				<div class="col-xs-4">
+					<h4 class="thumbnail">
+						<%= rest_in_place @player, :armor, :input, true %><br>
+						<small>
+							Armor
+						</small>
+					</h4>
+				</div>
+				<div class="col-xs-4">
+					<h4 class="thumbnail">
+						<%= rest_in_place @player, :initiative, :input, true %><br>
+						<small>
+							Initiaitve
+						</small>
+					</h4>
+				</div>
+				<div class="col-xs-4">
+					<h4 class="thumbnail">
+						<%= rest_in_place @player, :speed, :input, true %><br>
+						<small>
+							Speed
+						</small>
+					</h4>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<dl>
+				<dt>Personality</dt>
+				<dd><%= rest_in_place @player, :personality, :textarea %></dd>
+				<dt>Ideals</dt>
+				<dd><%= rest_in_place @player, :ideals, :textarea %></dd>
+				<dt>Bonds</dt>
+				<dd><%= rest_in_place @player, :bonds, :textarea %></dd>
+				<dt>Flaws</dt>
+				<dd><%= rest_in_place @player, :flaws, :textarea %></dd>
+			</dl>
+		</div>
+	</div>
+
+	<div id="spells">
+		<h3>Spells</h3>
+		<div id="levels" class="row">
+			<% @player.player_spells.group_by(&:level).each do |level| %>
+			<div class="col-sm-12 level">
+				<div class="panel <%= spell_level_panel_class(level[0]) %>">
+					<header class="panel-heading">
+						<h4 class="panel-title">
+							<%= spell_level level[0] %>
+						</h4>
+					</header>
+					<div class="list-grpup">
+						<% level[1].each do |spell|  %>
+						<%= link_to spell.spell, target: '_blank', class: 'list-group-item' do %>
+						<%= content_tag :strong, spell.spell.name  %>
+						<%= content_tag :small, 'action', class: 'pull-right' %>
+						<% end %>
+						<% end %>
+					</div>
+				</div>
+			</div>
+			<% end %>
+		</div>
+
+	</div>
+</div>
