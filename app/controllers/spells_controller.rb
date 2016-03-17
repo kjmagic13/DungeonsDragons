@@ -1,6 +1,8 @@
 class SpellsController < ApplicationController
   before_action :set_spell, only: [:show, :edit, :update, :destroy]
 
+	layout 'modal', only: [:show]
+
   # GET /spells
   # GET /spells.json
   def index
@@ -11,6 +13,7 @@ class SpellsController < ApplicationController
   # GET /spells/1.json
   def show
 	#   redirect_to @spell.roll20_link if @spell.roll20_link.present?
+	@modal_title = @spell.name
   end
 
   # GET /spells/new
@@ -70,6 +73,6 @@ class SpellsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def spell_params
-      params.require(:spell).permit(:name, :link)
+      params.require(:spell).permit!
     end
 end

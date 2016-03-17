@@ -1,0 +1,36 @@
+- name: Acrobatics
+  modifier: Dexterity
+- name: Animal Handling
+  modifier: Wisdom
+- name: Arcana
+  modifier: Intelligence
+- name: Athletics
+  modifier: Strength
+- name: Deception
+  modifier: Charisma
+- name: History
+  modifier: Intelligence
+- name: Insight
+  modifier: Wisdom
+- name: Intimidation
+  modifier: Charisma
+- name: Investigation
+  modifier: Intelligence
+- name: Medicine
+  modifier: Wisdom
+- name: Nature
+  modifier: Intelligence
+- name: Perception
+  modifier: Wisdom
+- name: Performance
+  modifier: Charisma
+- name: Persuasion
+  modifier: Charisma
+- name: Religion
+  modifier: Intelligence
+- name: Sleight of Hand
+  modifier: Dexterity
+- name: Stealth
+  modifier: Dexterity
+- name: Survival
+  modifier: Wisdom

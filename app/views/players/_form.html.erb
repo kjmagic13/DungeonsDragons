@@ -11,29 +11,32 @@
 </div>
 <% end %>
 
-<div class="field">
+<div class="form-group">
 	<%= f.label :name %><br>
-	<%= f.text_field :name %>
+	<%= f.text_field :name, class: 'form-control' %>
 </div>
-<div class="field">
-	<%= f.label :rank %><br>
-	<%= f.number_field :rank %>
-</div>
-<div class="field">
-	<%= f.label :class_name %><br>
-	<%= f.text_field :class_name %>
-</div>
-<div class="field">
-	<%= f.label :race %><br>
-	<%= f.text_field :race %>
-</div>
-<div class="field">
-	<%= f.label :alignment %><br>
-	<%= f.text_field :alignment %>
-</div>
-<div class="field">
-	<%= f.label :xp %><br>
-	<%= f.number_field :xp %>
+
+<div class="row">
+	<div class="col-sm-4">
+		<div class="form-group">
+			<% MODIFIERS.each do |modifier| %>
+			<div class="">
+				<%= f.check_box "mod_#{modifier}_prof".to_sym %>
+				<%= f.label "mod_#{modifier}_prof".to_sym, modifier %>
+			</div>
+			<% end %>
+		</div>
+	</div>
+	<div class="col-sm-4">
+		<div class="form-group">
+			<% SKILLS.each do |skill| %>
+			<div class="">
+				<%= f.check_box "skill_#{skill['name'].parameterize.underscore}_prof".to_sym %>
+				<%= f.label "skill_#{skill['name'].parameterize.underscore}_prof".to_sym, skill['name'] %>
+			</div>
+			<% end %>
+		</div>
+	</div>
 </div>
 
 <div class="">

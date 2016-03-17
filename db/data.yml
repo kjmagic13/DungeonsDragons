@@ -1,0 +1,346 @@
+
+---
+spells:
+  columns:
+  - id
+  - name
+  - link
+  - created_at
+  - updated_at
+  - casting_time
+  records: 
+  - - 1
+    - Guidance
+    - http://engl393-dnd5th.wikia.com/wiki/Guidance
+    - '2016-03-15 20:53:47.126187'
+    - '2016-03-15 21:57:39.431360'
+    - action
+  - - 5
+    - Healing Word
+    - http://engl393-dnd5th.wikia.com/wiki/Healing_Word
+    - '2016-03-15 22:10:25.515133'
+    - '2016-03-16 23:42:31.418300'
+    - bonus
+  - - 6
+    - Resistance
+    - http://engl393-dnd5th.wikia.com/wiki/Resistance
+    - '2016-03-15 22:36:16.064503'
+    - '2016-03-15 22:42:08.230400'
+    - action
+  - - 7
+    - Sacred Flame
+    - http://engl393-dnd5th.wikia.com/wiki/Sacred_Flame
+    - '2016-03-15 22:37:36.981541'
+    - '2016-03-15 22:42:39.310857'
+    - action
+  - - 8
+    - Spare the Dying
+    - http://engl393-dnd5th.wikia.com/wiki/Spare_the_Dying
+    - '2016-03-15 22:38:07.218405'
+    - '2016-03-15 22:43:19.435609'
+    - action
+  - - 9
+    - Cure Wounds
+    - http://engl393-dnd5th.wikia.com/wiki/Cure_Wounds
+    - '2016-03-15 22:38:23.280990'
+    - '2016-03-15 22:40:45.531177'
+    - action
+  - - 10
+    - Inflict Wounds
+    - http://engl393-dnd5th.wikia.com/wiki/Inflict_Wounds
+    - '2016-03-15 22:38:29.092689'
+    - '2016-03-15 22:41:00.849542'
+    - action
+  - - 11
+    - Command
+    - http://engl393-dnd5th.wikia.com/wiki/Command
+    - '2016-03-15 22:38:38.533868'
+    - '2016-03-15 22:40:29.887464'
+    - action
+  - - 12
+    - Prayer of Healing
+    - http://engl393-dnd5th.wikia.com/wiki/Prayer_of_Healing
+    - '2016-03-15 22:38:47.953757'
+    - '2016-03-15 22:41:49.627528'
+    - action
+  - - 13
+    - Silence
+    - http://engl393-dnd5th.wikia.com/wiki/Silence
+    - '2016-03-15 22:38:53.471443'
+    - '2016-03-15 22:42:59.260934'
+    - action
+  - - 14
+    - Aid
+    - http://engl393-dnd5th.wikia.com/wiki/Aid
+    - '2016-03-15 22:38:59.405391'
+    - '2016-03-15 22:40:00.465966'
+    - action
+  - - 15
+    - Mass Healing Word
+    - http://engl393-dnd5th.wikia.com/wiki/Mass_Healing_Word
+    - '2016-03-15 22:39:05.334293'
+    - '2016-03-16 23:43:21.433163'
+    - bonus
+  - - 16
+    - Revivify
+    - http://engl393-dnd5th.wikia.com/wiki/Revivify
+    - '2016-03-15 22:39:10.877122'
+    - '2016-03-15 22:42:21.674592'
+    - action
+  - - 17
+    - Gust of Wind
+    - http://engl393-dnd5th.wikia.com/wiki/Gust_of_Wind
+    - '2016-03-15 22:55:15.081617'
+    - '2016-03-15 22:55:15.081617'
+    - action
+  - - 18
+    - Shatter
+    - http://engl393-dnd5th.wikia.com/wiki/Shatter
+    - '2016-03-15 22:56:39.916088'
+    - '2016-03-15 22:56:39.916088'
+    - action
+  - - 19
+    - Call Lightning
+    - http://engl393-dnd5th.wikia.com/wiki/Call_Lightning
+    - '2016-03-15 22:57:01.693084'
+    - '2016-03-15 22:57:01.693084'
+    - action
+  - - 20
+    - Sleet Storm
+    - http://engl393-dnd5th.wikia.com/wiki/Sleet_Storm
+    - '2016-03-15 22:57:25.165828'
+    - '2016-03-15 22:57:25.165828'
+    - action
+
+---
+player_spells:
+  columns:
+  - id
+  - player_id
+  - spell_id
+  - level
+  - created_at
+  - updated_at
+  records: 
+  - - 6
+    - 1
+    - 1
+    - 0
+    - '2016-03-15 21:37:09.689025'
+    - '2016-03-15 22:32:03.347046'
+  - - 7
+    - 1
+    - 5
+    - 1
+    - '2016-03-15 22:11:30.319187'
+    - '2016-03-15 22:13:33.802108'
+  - - 12
+    - 1
+    - 14
+    - 2
+    - '2016-03-15 22:44:51.571594'
+    - '2016-03-15 22:49:44.162176'
+  - - 13
+    - 1
+    - 11
+    - 1
+    - '2016-03-15 22:44:51.572739'
+    - '2016-03-15 22:49:44.163363'
+  - - 14
+    - 1
+    - 9
+    - 1
+    - '2016-03-15 22:44:51.573422'
+    - '2016-03-15 22:49:44.164275'
+  - - 15
+    - 1
+    - 10
+    - 1
+    - '2016-03-15 22:44:51.574249'
+    - '2016-03-15 22:49:44.164916'
+  - - 16
+    - 1
+    - 15
+    - 3
+    - '2016-03-15 22:44:51.575152'
+    - '2016-03-15 22:49:44.165558'
+  - - 17
+    - 1
+    - 12
+    - 2
+    - '2016-03-15 22:44:51.576051'
+    - '2016-03-15 22:49:44.166363'
+  - - 18
+    - 1
+    - 6
+    - 0
+    - '2016-03-15 22:44:51.577295'
+    - '2016-03-15 22:44:51.577295'
+  - - 19
+    - 1
+    - 16
+    - 3
+    - '2016-03-15 22:44:51.578045'
+    - '2016-03-15 22:49:44.167163'
+  - - 20
+    - 1
+    - 7
+    - 0
+    - '2016-03-15 22:44:51.578738'
+    - '2016-03-15 22:44:51.578738'
+  - - 21
+    - 1
+    - 13
+    - 2
+    - '2016-03-15 22:44:51.579441'
+    - '2016-03-15 22:49:44.167983'
+  - - 22
+    - 1
+    - 8
+    - 0
+    - '2016-03-15 22:44:51.580119'
+    - '2016-03-15 22:44:51.580119'
+  - - 23
+    - 1
+    - 17
+    - -1
+    - '2016-03-15 22:57:48.889832'
+    - '2016-03-16 18:38:44.726802'
+  - - 24
+    - 1
+    - 18
+    - -1
+    - '2016-03-15 22:57:57.884819'
+    - '2016-03-16 18:38:44.727785'
+  - - 25
+    - 1
+    - 19
+    - -1
+    - '2016-03-15 22:58:07.008706'
+    - '2016-03-16 18:38:44.725574'
+  - - 26
+    - 1
+    - 20
+    - -1
+    - '2016-03-15 22:58:17.707455'
+    - '2016-03-16 18:38:44.728478'
+
+---
+players:
+  columns:
+  - id
+  - name
+  - rank
+  - class_name
+  - race
+  - alignment
+  - xp
+  - created_at
+  - updated_at
+  - hp
+  - hp_max
+  - armor
+  - initiative
+  - speed
+  - strength
+  - dexterity
+  - constitution
+  - intelligence
+  - wisdom
+  - charisma
+  - personality
+  - ideals
+  - bonds
+  - flaws
+  - inspiration
+  - proficiency_bonus
+  - mod_Strength
+  - mod_Dexterity
+  - mod_Constitution
+  - mod_Intelligence
+  - mod_Wisdom
+  - mod_Charisma
+  - mod_Strength_prof
+  - mod_Dexterity_prof
+  - mod_Constitution_prof
+  - mod_Intelligence_prof
+  - mod_Wisdom_prof
+  - mod_Charisma_prof
+  - skill_acrobatics_prof
+  - skill_animal_handling_prof
+  - skill_arcana_prof
+  - skill_athletics_prof
+  - skill_deception_prof
+  - skill_history_prof
+  - skill_insight_prof
+  - skill_intimidation_prof
+  - skill_investigation_prof
+  - skill_medicine_prof
+  - skill_nature_prof
+  - skill_perception_prof
+  - skill_performance_prof
+  - skill_persuasion_prof
+  - skill_religion_prof
+  - skill_sleight_of_hand_prof
+  - skill_stealth_prof
+  - skill_survival_prof
+  records: 
+  - - 1
+    - Kevin
+    - 6
+    - Tempest Cleric
+    - Human
+    - Lawful Neutral
+    - 12305
+    - '2016-03-15 20:53:11.364572'
+    - '2016-03-17 14:57:02.216319'
+    - 36
+    - 36
+    - 19
+    - 0
+    - 30
+    - 20
+    - 10
+    - 18
+    - 11
+    - 15
+    - 14
+    - I judge people by their actions, not their words. I’m confident in my own abilities
+      and do what I can to instill confidence in others.
+    - |-
+      Nothing and no one can steer me away from
+      my higher calling.
+    - To his Father Zeus.
+    - Tries too hard to please his father.
+    - 1
+    - 3
+    - 5
+    - 0
+    - 4
+    - 0
+    - 2
+    - 2
+    - false
+    - false
+    - false
+    - false
+    - true
+    - true
+    - false
+    - true
+    - false
+    - true
+    - false
+    - false
+    - true
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - true
+    - false
+    - false
+    - false
+    - true

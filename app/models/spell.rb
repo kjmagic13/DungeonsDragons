@@ -10,4 +10,12 @@ class Spell < ActiveRecord::Base
 		URI.encode "https://roll20.net/compendium/dnd5e/Spells:#{name}"
 	end
 
+	def casting_time_label_class
+		if self.casting_time == 'action'
+			'label-danger'
+		else
+			'label-info'
+		end
+	end
+
 end

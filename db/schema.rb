@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160316190522) do
+ActiveRecord::Schema.define(version: 20160317142930) do
 
   create_table "player_spells", force: :cascade do |t|
     t.integer  "player_id"
@@ -31,30 +31,63 @@ ActiveRecord::Schema.define(version: 20160316190522) do
     t.string   "race"
     t.string   "alignment"
     t.integer  "xp"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.integer  "hp",           default: 0
-    t.integer  "hp_max",       default: 0
-    t.integer  "armor",        default: 0
-    t.integer  "initiative",   default: 0
-    t.integer  "speed",        default: 1
-    t.integer  "strength",     default: 0
-    t.integer  "dexterity",    default: 0
-    t.integer  "constitution", default: 0
-    t.integer  "intelligence", default: 0
-    t.integer  "wisdom",       default: 0
-    t.integer  "charisma",     default: 0
-    t.text     "personality",  default: "..."
-    t.text     "ideals",       default: "..."
-    t.text     "bonds",        default: "..."
-    t.text     "flaws",        default: "..."
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
+    t.integer  "hp",                         default: 0
+    t.integer  "hp_max",                     default: 0
+    t.integer  "armor",                      default: 0
+    t.integer  "initiative",                 default: 0
+    t.integer  "speed",                      default: 1
+    t.integer  "strength",                   default: 0
+    t.integer  "dexterity",                  default: 0
+    t.integer  "constitution",               default: 0
+    t.integer  "intelligence",               default: 0
+    t.integer  "wisdom",                     default: 0
+    t.integer  "charisma",                   default: 0
+    t.text     "personality",                default: "..."
+    t.text     "ideals",                     default: "..."
+    t.text     "bonds",                      default: "..."
+    t.text     "flaws",                      default: "..."
+    t.integer  "inspiration",                default: 0
+    t.integer  "proficiency_bonus",          default: 0
+    t.integer  "mod_Strength",               default: 0
+    t.integer  "mod_Dexterity",              default: 0
+    t.integer  "mod_Constitution",           default: 0
+    t.integer  "mod_Intelligence",           default: 0
+    t.integer  "mod_Wisdom",                 default: 0
+    t.integer  "mod_Charisma",               default: 0
+    t.boolean  "mod_Strength_prof"
+    t.boolean  "mod_Dexterity_prof"
+    t.boolean  "mod_Constitution_prof"
+    t.boolean  "mod_Intelligence_prof"
+    t.boolean  "mod_Wisdom_prof"
+    t.boolean  "mod_Charisma_prof"
+    t.boolean  "skill_acrobatics_prof"
+    t.boolean  "skill_animal_handling_prof"
+    t.boolean  "skill_arcana_prof"
+    t.boolean  "skill_athletics_prof"
+    t.boolean  "skill_deception_prof"
+    t.boolean  "skill_history_prof"
+    t.boolean  "skill_insight_prof"
+    t.boolean  "skill_intimidation_prof"
+    t.boolean  "skill_investigation_prof"
+    t.boolean  "skill_medicine_prof"
+    t.boolean  "skill_nature_prof"
+    t.boolean  "skill_perception_prof"
+    t.boolean  "skill_performance_prof"
+    t.boolean  "skill_persuasion_prof"
+    t.boolean  "skill_religion_prof"
+    t.boolean  "skill_sleight_of_hand_prof"
+    t.boolean  "skill_stealth_prof"
+    t.boolean  "skill_survival_prof"
   end
 
   create_table "spells", force: :cascade do |t|
     t.string   "name"
     t.string   "link"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "casting_time", default: "action"
   end
 
 end

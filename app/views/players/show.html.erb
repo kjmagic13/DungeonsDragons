@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<div data-object="player" data-url="<%= player_path(@player) %>">
+<div class="player" data-object="player" data-url="<%= player_path(@player) %>">
 	<div class="row">
 		<div class="col-sm-5 text-center">
 			<h3>
@@ -51,111 +51,7 @@
 	</div>
 
 	<div class="row">
-		<div class="col-sm-1">
-
-			<div class="row text-center">
-				<div class="col-xs-4 col-sm-12">
-					<h5 class="thumbnail">
-						<%= rest_in_place @player, :strength, :input, true %><br>
-						<small>
-							Strength
-						</small>
-					</h5>
-				</div>
-				<div class="col-xs-4 col-sm-12">
-					<h5 class="thumbnail">
-						<%= rest_in_place @player, :dexterity, :input, true %><br>
-						<small>
-							Dexterity
-						</small>
-					</h5>
-				</div>
-				<div class="col-xs-4 col-sm-12">
-					<h5 class="thumbnail">
-						<%= rest_in_place @player, :constitution, :input, true %><br>
-						<small>
-							Constitution
-						</small>
-					</h5>
-				</div>
-				<div class="col-xs-4 col-sm-12">
-					<h5 class="thumbnail">
-						<%= rest_in_place @player, :intelligence, :input, true %><br>
-						<small>
-							Intelligence
-						</small>
-					</h5>
-				</div>
-				<div class="col-xs-4 col-sm-12">
-					<h5 class="thumbnail">
-						<%= rest_in_place @player, :wisdom, :input, true %><br>
-						<small>
-							Wisdom
-						</small>
-					</h5>
-				</div>
-				<div class="col-xs-4 col-sm-12">
-					<h5 class="thumbnail">
-						<%= rest_in_place @player, :charisma, :input, true %><br>
-						<small>
-							Charisma
-						</small>
-					</h5>
-				</div>
-			</div>
-
-		</div>
-		<div class="col-sm-3">
-			<div class="panel panel-default">
-				<header class="panel-heading text-center">
-					Saving Throws
-				</header>
-				<table class="table table-striped table-condensed">
-					<tbody>
-						<tr>
-							<td>
-								attr
-							</td>
-						</tr>
-						<tr>
-							<td>
-								attr
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<div class="panel panel-default">
-				<header class="panel-heading text-center">
-					Skills
-				</header>
-				<table class="table table-striped table-condensed">
-					<tbody>
-						<tr>
-							<td>
-								attr
-							</td>
-						</tr>
-						<tr>
-							<td>
-								attr
-							</td>
-						</tr>
-						<tr>
-							<td>
-								attr
-							</td>
-						</tr>
-						<tr>
-							<td>
-								attr
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-		<div class="col-sm-4">
+		<div class="col-sm-4 col-sm-push-4">
 			<div class="row text-center">
 				<div class="col-xs-4">
 					<h4 class="thumbnail">
@@ -182,6 +78,184 @@
 					</h4>
 				</div>
 			</div>
+
+			<div class="panel panel-default">
+				<header class="panel-heading">
+					<h4 class="panel-title text-center">
+						Weapons
+					</h4>
+				</header>
+				<table class="table table-striped table-condensed">
+					<tbody>
+						<% 4.times do %>
+						<tr>
+							<td class="text-center">
+								qty.
+							</td>
+							<td>
+								name
+							</td>
+						</tr>
+						<% end %>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="panel panel-default">
+				<header class="panel-heading">
+					<h4 class="panel-title text-center">
+						Items
+					</h4>
+				</header>
+				<table class="table table-striped table-condensed">
+					<tbody>
+						<% 8.times do %>
+						<tr>
+							<td class="text-center">
+								qty.
+							</td>
+							<td>
+								name
+							</td>
+						</tr>
+						<% end %>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+		<div class="col-sm-4 col-sm-pull-4">
+			<div class="row">
+				<div class="col-sm-3">
+
+					<div class="row text-center">
+						<div class="col-xs-4 col-sm-12">
+							<h5 class="thumbnail">
+								<%= rest_in_place @player, :strength, :input, true %><br>
+								<small>
+									Strength
+								</small>
+							</h5>
+						</div>
+						<div class="col-xs-4 col-sm-12">
+							<h5 class="thumbnail">
+								<%= rest_in_place @player, :dexterity, :input, true %><br>
+								<small>
+									Dexterity
+								</small>
+							</h5>
+						</div>
+						<div class="col-xs-4 col-sm-12">
+							<h5 class="thumbnail">
+								<%= rest_in_place @player, :constitution, :input, true %><br>
+								<small>
+									Constitution
+								</small>
+							</h5>
+						</div>
+						<div class="col-xs-4 col-sm-12">
+							<h5 class="thumbnail">
+								<%= rest_in_place @player, :intelligence, :input, true %><br>
+								<small>
+									Intelligence
+								</small>
+							</h5>
+						</div>
+						<div class="col-xs-4 col-sm-12">
+							<h5 class="thumbnail">
+								<%= rest_in_place @player, :wisdom, :input, true %><br>
+								<small>
+									Wisdom
+								</small>
+							</h5>
+						</div>
+						<div class="col-xs-4 col-sm-12">
+							<h5 class="thumbnail">
+								<%= rest_in_place @player, :charisma, :input, true %><br>
+								<small>
+									Charisma
+								</small>
+							</h5>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-sm-9">
+
+					<h4 class="thumbnail text-center">
+						<%= rest_in_place @player, :inspiration, :input, true %>
+						<small>
+							Inspiration
+						</small>
+					</h4>
+
+					<h4 class="thumbnail text-center">
+						<%= rest_in_place @player, :proficiency_bonus, :input, true %>
+						<small>
+							Proficiency Bonus
+						</small>
+					</h4>
+
+					<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+						<div class="panel panel-default">
+							<a class="panel-heading text-center small btn btn-default btn-block btn-sm" id="headingOne" role="tab" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+								Saving Throws
+							</a>
+							<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+								<table class="table table-striped table-condensed">
+									<tbody class="small">
+										<% MODIFIERS.each do |modifier| %>
+										<tr>
+											<td>
+												<%= check_box_tag "mod_#{modifier}_prof", true, @player.is_proficient_in_mod?(modifier), disabled: true %>
+											</td>
+											<td>
+												<span class="rest-in-place" data-attribute="<%= "mod_#{modifier}" %>">
+													<%= @player.send("mod_#{modifier}") %>
+												</span>
+												<%= "+ " + @player.proficiency_bonus.to_s if @player.send("mod_#{modifier}_prof") %>
+											</td>
+											<td>
+												<%= content_tag :strong, modifier %>
+											</td>
+										</tr>
+										<% end %>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<a class="panel-heading text-center small btn btn-default btn-block btn-sm" id="headingTwo" role="tab" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+								Skills
+							</a>
+							<div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+								<table class="table table-striped table-condensed">
+									<tbody class="small">
+
+										<%=  %>
+
+										<% SKILLS.each do |skill| %>
+										<tr>
+											<td>
+												<%= check_box_tag "skill_#{skill['name']}_prof", true, @player.is_proficient_in_skill?(skill['name']), disabled: true %>
+											</td>
+											<td>
+												<%= @player.send(skill['name']) %>
+											</td>
+											<td>
+												<%= content_tag :strong, skill['name'] %>
+												(<%= skill['modifier'][0..2] %>)
+											</td>
+										</tr>
+										<% end %>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
 		</div>
 		<div class="col-sm-4">
 			<dl>
@@ -197,7 +271,7 @@
 		</div>
 	</div>
 
-	<div id="spells">
+	<section id="spells">
 		<h3>Spells</h3>
 		<div id="levels" class="row">
 			<% @player.player_spells.group_by(&:level).each do |level| %>
@@ -209,10 +283,10 @@
 						</h4>
 					</header>
 					<div class="list-grpup">
-						<% level[1].each do |spell|  %>
-						<%= link_to spell.spell, target: '_blank', class: 'list-group-item' do %>
+						<% level[1].each do |spell| %>
+						<%= link_to spell.spell, class: 'list-group-item', data: { toggle: :modal, target: '#defaultModal' } do %>
 						<%= content_tag :strong, spell.spell.name  %>
-						<%= content_tag :small, 'action', class: 'pull-right' %>
+						<%= content_tag :small, spell.spell.casting_time, class: "pull-right label #{spell.spell.casting_time_label_class}" %>
 						<% end %>
 						<% end %>
 					</div>
@@ -221,5 +295,9 @@
 			<% end %>
 		</div>
 
-	</div>
+	</section>
+
+
+
+
 </div>

@@ -46,3 +46,4 @@ group :development do
 end
 
 gem 'rest_in_place'
+gem 'yaml_db'

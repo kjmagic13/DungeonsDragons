@@ -7,4 +7,37 @@ class Player < ActiveRecord::Base
 
 	default_scope { includes(:spells) }
 
+	MODIFIERS.each do |modifier|
+		define_method("moded_#{modifier}") do
+			if is_proficient_in_mod?(modifier)
+				self.send("mod_#{modifier}") + self.proficiency_bonus
+			else
+				self.send("mod_#{modifier}")
+			end
+		end
+	end
+
+	SKILLS.each do |skill|
+		skill_name = skill['name']
+		modifier = skill['modifier']
+		define_method(skill_name) do
+			if is_proficient_in_skill?(skill_name)
+				self.send("mod_#{modifier}") + self.proficiency_bonus
+			else
+				self.send("mod_#{modifier}")
+			end
+
+		end
+	end
+
+	def is_proficient_in_mod?(modifier)
+		self.send("mod_#{modifier}_prof")
+	end
+
+	def is_proficient_in_skill?(skill_name)
+		self.send("skill_#{skill_name.parameterize.underscore}_prof")
+	end
+
+	private
+
 end
