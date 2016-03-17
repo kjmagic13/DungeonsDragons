@@ -1,5 +1,5 @@
 class PlayersController < ApplicationController
-	before_action :set_player, only: [:show, :edit, :update, :destroy]
+	before_action :set_player, only: [:show, :edit, :update, :destroy, :rest]
 
 	# GET /players
 	# GET /players.json
@@ -10,6 +10,11 @@ class PlayersController < ApplicationController
 	# GET /players/1
 	# GET /players/1.json
 	def show
+	end
+
+	def rest
+		@player.rest
+		redirect_to @player
 	end
 
 	# GET /players/new

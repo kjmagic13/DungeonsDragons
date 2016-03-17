@@ -38,6 +38,12 @@ class Player < ActiveRecord::Base
 		self.send("skill_#{skill_name.parameterize.underscore}_prof")
 	end
 
+	def rest
+		self.hp = self.hp_max
+		self.player_spells.each{ |s| s.available = true }
+		self.save
+	end
+
 	private
 
 end

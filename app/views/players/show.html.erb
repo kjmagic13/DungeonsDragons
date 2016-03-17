@@ -5,10 +5,11 @@
 		<div class="col-sm-5 text-center">
 			<h3>
 				<%= rest_in_place @player, :name %>
-				<small>
-					<%= link_to raw('<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>'), edit_player_path(@player), title: 'Edit Player' %>
-				</small>
 			</h3>
+			<p class="btn-group" role="group">
+				<%= link_to 'Rest', rest_player_path(@player), class: 'btn btn-xs btn-default' %>
+				<%= link_to 'Edit', edit_player_path(@player), class: 'btn btn-xs btn-default' %>
+			</p>
 		</div>
 		<div class="col-sm-7">
 			<table class="table table-bordered table-condensed">
@@ -284,7 +285,7 @@
 					</header>
 					<div class="list-grpup">
 						<% level[1].each do |spell| %>
-						<%= link_to spell.spell, class: 'list-group-item', data: { toggle: :modal, target: '#defaultModal' } do %>
+						<%= link_to player_spell_path(@player, spell.spell), class: (spell.available ? 'list-group-item' : 'list-group-item list-group-item-warning'), data: { toggle: :modal, target: '#defaultModal' } do %>
 						<%= content_tag :strong, spell.spell.name  %>
 						<%= content_tag :small, spell.spell.casting_time, class: "pull-right label #{spell.spell.casting_time_label_class}" %>
 						<% end %>
