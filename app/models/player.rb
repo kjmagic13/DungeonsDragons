@@ -7,7 +7,14 @@ class Player < ActiveRecord::Base
 
 	default_scope { includes(:spells) }
 
+	def rest
+		self.hp = self.hp_max
+		self.player_spells.each{ |s| s.available = true }
+		self.save
+	end
+
 	MODIFIERS.each do |modifier|
+		# def moded_Strenght do; end;
 		define_method("moded_#{modifier}") do
 			if is_proficient_in_mod?(modifier)
 				self.send("mod_#{modifier}") + self.proficiency_bonus
@@ -20,6 +27,7 @@ class Player < ActiveRecord::Base
 	SKILLS.each do |skill|
 		skill_name = skill['name']
 		modifier = skill['modifier']
+		# def moded_Acrobatics do; end;
 		define_method(skill_name) do
 			if is_proficient_in_skill?(skill_name)
 				self.send("mod_#{modifier}") + self.proficiency_bonus
@@ -36,12 +44,6 @@ class Player < ActiveRecord::Base
 
 	def is_proficient_in_skill?(skill_name)
 		self.send("skill_#{skill_name.parameterize.underscore}_prof")
-	end
-
-	def rest
-		self.hp = self.hp_max
-		self.player_spells.each{ |s| s.available = true }
-		self.save
 	end
 
 	private

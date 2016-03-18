@@ -19,10 +19,7 @@ class PlayerSpellsController < ApplicationController
 	end
 
 	def use
-		unless @player_spell.is_cantrip?
-			@player_spell.available = false
-			@player_spell.save
-		end
+		@player_spell.use
 		redirect_to [@player_spell.player, {anchor: 'spells'}]
 	end
 
