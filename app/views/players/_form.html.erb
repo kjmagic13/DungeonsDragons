@@ -39,24 +39,6 @@
 	</div>
 </div>
 
-<div class="">
-	<%= f.fields_for :player_spells do |ps| %>
-	<fieldset>
-		<p>
-			<%= ps.select :spell_id, Spell.all.map{ |s| [s.name, s.id] }, include_blank: '-' %>
-		</p>
-		<p>
-			<%= ps.label :level %>
-			<%= ps.select :level, (1..9).map{ |i| [i,i] }.unshift(['Class', -1], ['Cantrip', 0]) %>
-		</p>
-		<p>
-			<%= ps.label :remove %>
-			<%= ps.check_box :_destroy %>
-		</p>
-	</fieldset>
-	<% end %>
-</div>
-
 <div class="actions">
 	<p>
 		<%= f.submit %>

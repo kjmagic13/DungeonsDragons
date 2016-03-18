@@ -1,17 +1,9 @@
+<% @attrib_keys.each do |k| %>
 <p>
-	<%= link_to 'Use', use_player_spell_path(@player, @spell), class: 'btn btn-primary pull-right' if @player.present? && @player_spell.available %>
+	<%= content_tag :strong, k.titleize+':' if @spell.send(k).present? %>
+	<%= raw @spell.send(k) if @spell.send(k).present? %>
 </p>
-
-
-<!-- 4:3 aspect ratio -->
-<div class="embed-responsive embed-responsive-4by3">
-	<%#= content_tag :iframe, nil, src: @spell.roll20_link, class: 'embed-responsive-item' %>
-</div>
-
-<p>
-  <strong>Name:</strong>
-  <%= @spell.name %>
-</p>
+<% end %>
 
 <p>
 	<%= link_to 'Edit', edit_spell_path(@spell) %>

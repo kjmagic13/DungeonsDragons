@@ -7,8 +7,8 @@
 				<%= rest_in_place @player, :name %>
 			</h3>
 			<p class="btn-group" role="group">
-				<%= link_to 'Rest', rest_player_path(@player), class: 'btn btn-xs btn-default' %>
-				<%= link_to 'Edit', edit_player_path(@player), class: 'btn btn-xs btn-default' %>
+				<%= link_to 'Rest', rest_player_path(@player), class: 'btn btn-sm btn-default' %>
+				<%= link_to 'Edit', edit_player_path(@player), class: 'btn btn-sm btn-default' %>
 			</p>
 		</div>
 		<div class="col-sm-7">
@@ -80,10 +80,10 @@
 				</div>
 			</div>
 
-			<div class="panel panel-default">
+			<div class="panel panel-info">
 				<header class="panel-heading">
 					<h4 class="panel-title text-center">
-						Weapons
+						Weapons & Attacks
 					</h4>
 				</header>
 				<table class="table table-striped table-condensed">
@@ -102,10 +102,10 @@
 				</table>
 			</div>
 
-			<div class="panel panel-default">
+			<div class="panel panel-info">
 				<header class="panel-heading">
 					<h4 class="panel-title text-center">
-						Items
+						Inventory
 					</h4>
 				</header>
 				<table class="table table-striped table-condensed">
@@ -273,7 +273,10 @@
 	</div>
 
 	<section id="spells">
-		<h3>Spells</h3>
+		<h3>
+			Spells
+			<%= link_to '+', new_player_spell_path(@player), data: { toggle: :modal, target: '#defaultModal' } %>
+		</h3>
 		<div id="levels" class="row">
 			<% @player.player_spells.group_by(&:level).each do |level| %>
 			<div class="col-sm-12 level">
@@ -285,7 +288,7 @@
 					</header>
 					<div class="list-grpup">
 						<% level[1].each do |spell| %>
-						<%= link_to player_spell_path(@player, spell.spell), class: (spell.available ? 'list-group-item' : 'list-group-item list-group-item-warning'), data: { toggle: :modal, target: '#defaultModal' } do %>
+						<%= link_to player_spell_path(@player, spell.spell), class: (spell.available ? 'list-group-item' : 'list-group-item disabled'), data: { toggle: :modal, target: '#defaultModal' } do %>
 						<%= content_tag :strong, spell.spell.name  %>
 						<%= content_tag :small, spell.spell.casting_time, class: "pull-right label #{spell.spell.casting_time_label_class}" %>
 						<% end %>

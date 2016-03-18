@@ -7,3 +7,7 @@ $ ->
 	# $('body').bind 'success.rest-in-place', (event, data) ->
 	# 	console.log 'hi'
 	# 	return
+
+	$('#defaultModal').on 'shown.bs.modal', ->
+		$('.focus-here').focus()
+		return

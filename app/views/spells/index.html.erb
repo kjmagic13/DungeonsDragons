@@ -16,7 +16,7 @@
 		<tr>
 			<td>
 				<%#= link_to spell.name, spell, data: { toggle: :modal, target: '#spellModal' } %>
-				<%= link_to spell.name, spell %>
+				<%= link_to spell.name, spell, data: { toggle: :modal, target: '#defaultModal' } %>
 			</td>
 			<td><%= link_to 'Edit', edit_spell_path(spell) %></td>
 			<td><%= link_to 'Destroy', spell, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,0 +1,14 @@
+<div class="modal-body">
+	<% @attrib_keys.each do |k| %>
+	<p>
+		<%= content_tag :strong, k.titleize+':' if @player_spell.spell.send(k).present? %>
+		<%= raw @player_spell.spell.send(k) if @player_spell.spell.send(k).present? %>
+	</p>
+	<% end %>
+</div>
+<footer class="modal-footer">
+	<%= link_to 'Edit Spell', edit_spell_path(@player_spell.spell), class: 'btn btn-sm btn-default pull-left' %>
+	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	<%= link_to 'Remove', player_spell_path(@player_spell.player, @player_spell.spell), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-warning' %>
+	<%= link_to 'Use', use_player_spell_path(@player_spell.player, @player_spell.spell), class: 'btn btn-primary' %>
+</footer>

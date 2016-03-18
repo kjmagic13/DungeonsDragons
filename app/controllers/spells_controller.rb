@@ -1,7 +1,6 @@
 class SpellsController < ApplicationController
-	before_action :set_spell, only: [:show, :edit, :update, :destroy, :use]
 
-	layout 'modal', only: [:show]
+	before_action :set_spell, only: [:show, :edit, :update, :destroy]
 
 	# GET /spells
 	# GET /spells.json
@@ -12,16 +11,6 @@ class SpellsController < ApplicationController
 	# GET /spells/1
 	# GET /spells/1.json
 	def show
-		@modal_title = @spell.name
-	end
-
-	def use
-		ps = @player.player_spells.find_by(spell_id: @spell.id)
-		unless ps.is_cantrip?
-			ps.available = false
-			ps.save
-		end
-		redirect_to [@player, {anchor: 'spells'}]
 	end
 
 	# GET /spells/new
@@ -77,8 +66,6 @@ class SpellsController < ApplicationController
 	# Use callbacks to share common setup or constraints between actions.
 	def set_spell
 		@spell = Spell.find(params[:id])
-		@player = Player.find(params[:player_id]) if params[:player_id].present?
-		@player_spell = @player.player_spells.find_by(spell_id: @spell.id) if params[:player_id].present?
 	end
 
 	# Never trust parameters from the scary internet, only allow the white list through.

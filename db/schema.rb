@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160317153634) do
+ActiveRecord::Schema.define(version: 20160318122649) do
 
   create_table "player_spells", force: :cascade do |t|
     t.integer  "player_id"
@@ -85,9 +85,26 @@ ActiveRecord::Schema.define(version: 20160317153634) do
 
   create_table "spells", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.string   "casting_time", default: "action"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.string   "casting_time",  default: "action"
+    t.text     "desc"
+    t.string   "page"
+    t.string   "range"
+    t.string   "components"
+    t.string   "material"
+    t.string   "ritual"
+    t.string   "duration"
+    t.string   "concentration"
+    t.string   "level"
+    t.string   "school"
+    t.string   "class_names"
+    t.text     "higher_level"
+    t.string   "archetype"
+    t.string   "domains"
+    t.string   "oaths"
+    t.string   "circles"
+    t.string   "patrons"
   end
 
 end

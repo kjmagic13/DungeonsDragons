@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @spell %> |
+<%= link_to 'Show', @spell, data: { toggle: :modal, target: '#defaultModal' } %> |
 <%= link_to 'Back', spells_path %>
