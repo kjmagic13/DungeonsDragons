@@ -87,18 +87,7 @@
 						Weapons & Attacks
 					</h4>
 				</header>
-				<table class="table table-striped table-condensed">
-					<tbody>
-						<tr>
-							<th></th>
-							<th class="text-center">Name</th>
-							<th class="text-center">Damage</th>
-							<th class="text-center">Atk Bonus</th>
-							<th colspan="2"></th>
-						</tr>
-						<%= render @player.weapons %>
-					</tbody>
-				</table>
+				<%= render template: 'weapons/index' %>
 			</div>
 
 			<div class="panel panel-info">
@@ -107,6 +96,9 @@
 						Inventory
 					</h4>
 				</header>
+
+				<%#= render template: 'items/index' %>
+
 				<table class="table table-striped table-condensed">
 					<tbody>
 						<% 8.times do %>
@@ -121,6 +113,7 @@
 						<% end %>
 					</tbody>
 				</table>
+
 			</div>
 
 		</div>
