@@ -4,11 +4,15 @@ Rails.application.routes.draw do
 		member do
 			get 'rest'
 		end
+
 		resources :spells, except: [], controller: :player_spells do
 			member do
 				get 'use'
 			end
 		end
+
+		resources :weapons
+
 	end
 
 	resources :spells

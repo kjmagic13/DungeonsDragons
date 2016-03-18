@@ -10,5 +10,5 @@
 	<%= link_to 'Edit Spell', edit_spell_path(@player_spell.spell), class: 'btn btn-sm btn-default pull-left' %>
 	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 	<%= link_to 'Remove', player_spell_path(@player_spell.player, @player_spell.spell), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-warning' %>
-	<%= link_to 'Use', use_player_spell_path(@player_spell.player, @player_spell.spell), class: 'btn btn-primary' %>
+	<%= link_to 'Use', use_player_spell_path(@player_spell.player, @player_spell.spell), class: 'btn btn-primary' if @player_spell.available %>
 </footer>

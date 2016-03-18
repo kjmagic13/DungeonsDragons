@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160318122649) do
+ActiveRecord::Schema.define(version: 20160318185312) do
 
   create_table "player_spells", force: :cascade do |t|
     t.integer  "player_id"
@@ -106,5 +106,16 @@ ActiveRecord::Schema.define(version: 20160318122649) do
     t.string   "circles"
     t.string   "patrons"
   end
+
+  create_table "weapons", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "attack"
+    t.string   "damage"
+    t.integer  "player_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "weapons", ["player_id"], name: "index_weapons_on_player_id"
 
 end

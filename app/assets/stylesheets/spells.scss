@@ -2,15 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@media (min-width: 768px) {
-	#levels {
-		-webkit-column-count: 3; /* Chrome, Safari, Opera */
-		-moz-column-count: 3; /* Firefox */
-		column-count: 3;
-	}
-	#levels .level {
+
+#levels {
+	.level {
 		-webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
 		page-break-inside: avoid; /* Firefox */
 		break-inside: avoid; /* IE 10+ */
+	}
+
+	@media (min-width: 768px) {
+		-webkit-column-count: 2; /* Chrome, Safari, Opera */
+		-moz-column-count: 2; /* Firefox */
+		column-count: 2;
+	}
+	@media (min-width: 992px) {
+		-webkit-column-count: 3; /* Chrome, Safari, Opera */
+		-moz-column-count: 3; /* Firefox */
+		column-count: 3;
 	}
 }
