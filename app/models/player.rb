@@ -4,10 +4,11 @@ class Player < ActiveRecord::Base
 	has_many :spells, through: :player_spells
 
 	has_many :weapons, dependent: :destroy
+	has_many :items, dependent: :destroy
 
 	accepts_nested_attributes_for :player_spells, allow_destroy: true, reject_if: proc { |s| s['spell_id'].blank? }
 
-	default_scope { includes(:spells, :weapons) }
+	default_scope { includes(:spells, :weapons, :items) }
 
 	def rest
 		self.hp = self.hp_max

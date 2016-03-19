@@ -1,13 +1,13 @@
-<%= form_for [@player, @weapon] do |f| %>
+<%= form_for [@player, @item] do |f| %>
 
 <div class="modal-body">
 
-	<% if @weapon.errors.any? %>
+	<% if @item.errors.any? %>
 	<div id="error_explanation">
-		<h2><%= pluralize(@weapon.errors.count, "error") %> prohibited this weapon from being saved:</h2>
+		<h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
 
 		<ul>
-			<% @weapon.errors.full_messages.each do |message| %>
+			<% @item.errors.full_messages.each do |message| %>
 			<li><%= message %></li>
 			<% end %>
 		</ul>
@@ -16,22 +16,17 @@
 
 	<%= f.hidden_field :player_id %>
 
-	<div class="form-group">
-		<%= f.label :name %>
-		<%= f.text_field :name, class: 'form-control focus-here' %>
-	</div>
-
 	<div class="row">
-		<div class="col-sm-6">
+		<div class="col-sm-3">
 			<div class="form-group">
-				<%= f.label :damage %>
-				<%= f.text_field :damage, class: 'form-control' %>
+				<%= f.label :quantity %>
+				<%= f.number_field :quantity, class: 'form-control' %>
 			</div>
 		</div>
-		<div class="col-sm-6">
+		<div class="col-sm-9">
 			<div class="form-group">
-				<%= f.label :attack, 'Attack Bonus' %>
-				<%= f.number_field :attack, class: 'form-control' %>
+				<%= f.label :name %>
+				<%= f.text_field :name, class: 'form-control' %>
 			</div>
 		</div>
 	</div>
@@ -40,7 +35,6 @@
 		<%= f.label :notes %>
 		<%= f.text_area :notes, class: 'form-control', rows: 5 %>
 	</div>
-
 
 </div>
 

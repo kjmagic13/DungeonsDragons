@@ -1,0 +1,17 @@
+<tr class="text-center">
+	<td class="text-muted">
+		<i class="fa fa-bars"></i>
+	</td>
+	<td>
+		<%= item.quantity %>
+	</td>
+	<td>
+		<%= item.name %>
+	</td>
+	<td>
+		<%= link_to raw('<i class="fa fa-edit"></i>'), edit_player_item_path(@player, item), data: { toggle: :modal, target: '#defaultModal' } %>
+	</td>
+	<td>
+		<%= link_to raw('<i class="fa fa-remove"></i>'), [@player, item], method: :delete, data: { confirm: 'Are you sure?' } %>
+	</td>
+</tr>

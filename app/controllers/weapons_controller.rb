@@ -72,13 +72,11 @@ class WeaponsController < ApplicationController
 		@player = Player.find(params[:player_id])
 	end
 
-	# Use callbacks to share common setup or constraints between actions.
 	def set_weapon
 		@weapon = Weapon.find(params[:id])
 	end
 
-	# Never trust parameters from the scary internet, only allow the white list through.
 	def weapon_params
-		params.require(:weapon).permit(:name, :attack, :damage, :player_id)
+		params.require(:weapon).permit(:name, :attack, :damage, :notes, :player_id)
 	end
 end

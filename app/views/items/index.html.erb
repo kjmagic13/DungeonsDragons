@@ -1,0 +1,21 @@
+<% if @player.items.any? %>
+
+<table class="table table-striped table-condensed">
+	<tbody>
+		<tr>
+			<th></th>
+			<th class="text-center">Quantity</th>
+			<th class="text-center">Name</th>
+			<th colspan="2"></th>
+		</tr>
+		<%= render @player.items %>
+	</tbody>
+</table>
+
+<% else %>
+
+<div class="list-group text-center">
+	<%= link_to 'Add an Item', new_player_item_path(@player), class: 'list-group-item', data: { toggle: :modal, target: '#defaultModal' } %>
+</div>
+
+<% end %>

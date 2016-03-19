@@ -15,7 +15,7 @@ class PlayerSpellsController < ApplicationController
 	# GET /player_spells/1.json
 	def show
 		@modal_title = @player_spell.spell.name
-		@attrib_keys = ["name", "desc", "page", "range", "components", "material", "ritual", "duration", "concentration", "casting_time", "level", "school", "class_names", "higher_level", "archetype", "domains", "oaths", "circles", "patrons"]
+		@attrib_keys = ["desc", "higher_level", "range", "components", "material", "ritual", "duration", "concentration", "casting_time", "level", "school", "class_names", "archetype", "domains", "oaths", "circles", "patrons"]
 	end
 
 	def use
