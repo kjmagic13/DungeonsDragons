@@ -18,7 +18,6 @@ class WeaponsController < ApplicationController
 
 	# GET /weapons/new
 	def new
-		@modal_title = 'Add Weapon'
 		@weapon = Weapon.new player: @player
 	end
 

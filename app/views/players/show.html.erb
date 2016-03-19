@@ -263,13 +263,13 @@
 			<div class="hidden-xs">
 				<div class="row">
 					<% @player.player_spells.group_by(&:level).each do |level| %>
-					<%= render 'levels/level', level: level %>
+					<%= render 'player_spells/levels/level', level: level %>
 					<% end %>
 				</div>
 			</div>
 
 			<div class="vidible-xs-block">
-				<%= render 'levels/carousel' %>
+				<%= render 'player_spells/levels/carousel' %>
 			</div>
 
 		</div>

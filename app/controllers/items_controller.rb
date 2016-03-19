@@ -18,7 +18,6 @@ class ItemsController < ApplicationController
 
 	# GET /items/new
 	def new
-		@modal_title = 'Add Item'
 		@item = Item.new player: @player
 	end
 

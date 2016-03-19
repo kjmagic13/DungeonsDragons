@@ -14,7 +14,6 @@ class PlayerSpellsController < ApplicationController
 	# GET /player_spells/1
 	# GET /player_spells/1.json
 	def show
-		@modal_title = @player_spell.spell.name
 		@attrib_keys = ["desc", "higher_level", "range", "components", "material", "ritual", "duration", "concentration", "casting_time", "level", "school", "class_names", "archetype", "domains", "oaths", "circles", "patrons"]
 	end
 
@@ -26,7 +25,6 @@ class PlayerSpellsController < ApplicationController
 	# GET /player_spells/new
 	def new
 		@player_spell = PlayerSpell.new(player_id: params[:player_id])
-		@modal_title = 'Add Spell'
 	end
 
 	# GET /player_spells/1/edit
