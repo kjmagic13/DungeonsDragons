@@ -18,7 +18,7 @@ class Spell < ActiveRecord::Base
 		if self.casting_time.include? 'bonus'
 			'label-info'
 		else
-			'label-danger'
+			'label-default'
 		end
 	end
 
