@@ -1,0 +1,12 @@
+<tr>
+	<td>
+		<%= check_box_tag "skill_#{skill['name']}_prof", true, @player.is_proficient_in_skill?(skill['name']), disabled: true %>
+	</td>
+	<td>
+		<%= @player.send(skill['name']) %>
+	</td>
+	<td>
+		<%= content_tag :strong, skill['name'] %>
+		(<%= skill['modifier'][0..2] %>)
+	</td>
+</tr>

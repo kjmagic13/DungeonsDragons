@@ -1,0 +1,15 @@
+<tr>
+	<td>
+		<%#= best_in_place @player, "mod_#{modifier}_prof".to_sym, as: :checkbox, collection: [raw("<i class='fa fa-fw fa-circle-o'></i>"), raw("<i class='fa fa-fw fa-check-circle-o'></i>")] %>
+		<%= check_box_tag "mod_#{modifier}_prof", true, @player.is_proficient_in_mod?(modifier), disabled: true %>
+	</td>
+	<td>
+
+		<%= best_in_place @player, "mod_#{modifier}".to_sym, inner_class: 'form-control input-sm' %>
+		<%= "+ " + @player.proficiency_bonus.to_s if @player.send("mod_#{modifier}_prof") %>
+
+	</td>
+	<td>
+		<%= content_tag :strong, modifier %>
+	</td>
+</tr>

@@ -1,25 +1,19 @@
-<p id="notice"><%= notice %></p>
+<h3>
+	Spells
+	<%= link_to raw('<i class="fa fa-plus"></i>'), new_player_spell_path(@player), data: { toggle: :modal, target: '#defaultModal' } %>
+</h3>
+<div id="levels" class="row">
 
-<h1>Listing Player Spells</h1>
+	<div class="hidden-xs">
+		<div class="row">
+			<% @player.player_spells.group_by(&:level).each do |level| %>
+			<%= render 'player_spells/levels/level', level: level %>
+			<% end %>
+		</div>
+	</div>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+	<div class="vidible-xs-block">
+		<%= render 'player_spells/levels/carousel' %>
+	</div>
 
-  <tbody>
-    <% @player_spells.each do |player_spell| %>
-      <tr>
-        <td><%= link_to 'Show', player_spell %></td>
-        <td><%= link_to 'Edit', edit_player_spell_path(player_spell) %></td>
-        <td><%= link_to 'Destroy', player_spell, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Player spell', new_player_spell_path %>
+</div>

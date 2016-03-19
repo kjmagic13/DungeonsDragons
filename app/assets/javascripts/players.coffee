@@ -5,7 +5,9 @@
 $ ->
 
 	# $('.best_in_place').bind 'ajax:success', (event, data) ->
-	# 	console.log event
+	# 	if $(this).hasClass('reload-modifiers')
+	# 		$('#modifiers').load $(this).data('bip-url')+'/get-modifiers'
+	# 		return
 	# 	return
 
 	$('#defaultModal').on 'shown.bs.modal', ->

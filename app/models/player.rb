@@ -16,8 +16,12 @@ class Player < ActiveRecord::Base
 		self.save
 	end
 
+	def test
+		'#'
+	end
+
 	MODIFIERS.each do |modifier|
-		# def moded_Strenght do; end;
+		# def moded_Strength
 		define_method("moded_#{modifier}") do
 			if is_proficient_in_mod?(modifier)
 				self.send("mod_#{modifier}") + self.proficiency_bonus
@@ -30,7 +34,7 @@ class Player < ActiveRecord::Base
 	SKILLS.each do |skill|
 		skill_name = skill['name']
 		modifier = skill['modifier']
-		# def moded_Acrobatics do; end;
+		# def moded_Acrobatics
 		define_method(skill_name) do
 			if is_proficient_in_skill?(skill_name)
 				self.send("mod_#{modifier}") + self.proficiency_bonus

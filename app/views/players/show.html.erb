@@ -5,6 +5,11 @@
 		<div class="col-sm-5 text-center">
 			<h3>
 				<%= best_in_place @player, :name, inner_class: 'form-control input-sm' %>
+				<small>
+					<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+						<i class="fa fa-fw fa-info-circle"></i>
+					</a>
+				</small>
 			</h3>
 			<p class="btn-group" role="group">
 				<%= link_to 'Rest', rest_player_path(@player), class: 'btn btn-sm btn-default' %>
@@ -51,74 +56,72 @@
 		</div>
 	</div>
 
-	<div class="row">
-		<div class="col-md-7 col-md-push-5 col-sm-6 col-sm-push-6">
+	<div class="collapse" id="collapseExample">
+		<div class="well well-sm">
+			<dl class="panel-body">
+				<dt>Personality</dt>
+				<dd><%= @player.personality %></dd>
+				<dt>Ideals</dt>
+				<dd><%= @player.ideals %></dd>
+				<dt>Bonds</dt>
+				<dd><%= @player.bonds %></dd>
+				<dt>Flaws</dt>
+				<dd><%= @player.flaws %></dd>
+			</dl>
+		</div>
+	</div>
 
-			<div class="row">
-				<div class="col-md-7">
-					<div class="row text-center">
-						<div class="col-xs-4">
-							<h4 class="thumbnail">
-								<%= best_in_place @player, :armor, inner_class: 'form-control input-sm' %><br>
-								<small>
-									Armor
-								</small>
-							</h4>
-						</div>
-						<div class="col-xs-4">
-							<h4 class="thumbnail">
-								<%= best_in_place @player, :initiative, inner_class: 'form-control input-sm' %><br>
-								<small>
-									Initiaitve
-								</small>
-							</h4>
-						</div>
-						<div class="col-xs-4">
-							<h4 class="thumbnail">
-								<%= best_in_place @player, :speed, inner_class: 'form-control input-sm' %><br>
-								<small>
-									Speed
-								</small>
-							</h4>
-						</div>
-					</div>
-					<div class="panel panel-info">
-						<header class="panel-heading">
-							<%= link_to raw('<i class="fa fa-plus"></i>'), new_player_weapon_path(@player), class: 'pull-right', data: { toggle: :modal, target: '#defaultModal' } %>
-							<h4 id="weapons" class="panel-title text-center">
-								Weapons & Attacks
-							</h4>
-						</header>
-						<%= render template: 'weapons/index' %>
-					</div>
-					<div class="panel panel-info">
-						<header class="panel-heading">
-							<%= link_to raw('<i class="fa fa-plus"></i>'), new_player_item_path(@player), class: 'pull-right', data: { toggle: :modal, target: '#defaultModal' } %>
-							<h4 id="items" class="panel-title text-center">
-								Inventory
-							</h4>
-						</header>
-						<%= render template: 'items/index' %>
-					</div>
+	<div class="row">
+		<div class="col-md-5 col-md-push-7 col-sm-6 col-sm-push-6">
+
+			<div class="row text-center">
+				<div class="col-xs-4">
+					<h4 class="thumbnail">
+						<%= best_in_place @player, :armor, inner_class: 'form-control input-sm' %><br>
+						<small>
+							Armor
+						</small>
+					</h4>
 				</div>
-				<div class="col-md-5">
-					<div class="thumbnail">
-						<dl class="caption">
-							<dt>Personality</dt>
-							<dd><%= @player.personality %></dd>
-							<dt>Ideals</dt>
-							<dd><%= @player.ideals %></dd>
-							<dt>Bonds</dt>
-							<dd><%= @player.bonds %></dd>
-							<dt>Flaws</dt>
-							<dd><%= @player.flaws %></dd>
-						</dl>
-					</div>
+				<div class="col-xs-4">
+					<h4 class="thumbnail">
+						<%= best_in_place @player, :initiative, inner_class: 'form-control input-sm' %><br>
+						<small>
+							Initiaitve
+						</small>
+					</h4>
 				</div>
+				<div class="col-xs-4">
+					<h4 class="thumbnail">
+						<%= best_in_place @player, :speed, inner_class: 'form-control input-sm' %><br>
+						<small>
+							Speed
+						</small>
+					</h4>
+				</div>
+			</div>
+			<div class="panel panel-info">
+				<header class="panel-heading">
+					<%= link_to raw('<i class="fa fa-plus"></i>'), new_player_weapon_path(@player), class: 'pull-right', data: { toggle: :modal, target: '#defaultModal' } %>
+					<h4 id="weapons" class="panel-title text-center">
+						Weapons & Attacks
+					</h4>
+				</header>
+				<%= render template: 'weapons/index' %>
+			</div>
+			<div class="panel panel-info">
+				<header class="panel-heading">
+					<%= link_to raw('<i class="fa fa-plus"></i>'), new_player_item_path(@player), class: 'pull-right', data: { toggle: :modal, target: '#defaultModal' } %>
+					<h4 id="items" class="panel-title text-center">
+						Inventory
+					</h4>
+				</header>
+				<%= render template: 'items/index' %>
 			</div>
 
 		</div>
-		<div class="col-md-5 col-md-pull-7 col-sm-6 col-sm-pull-6">
+		<div class="col-md-7 col-md-pull-5 col-sm-6 col-sm-pull-6">
+
 			<div class="row">
 				<div class="col-sm-3">
 
@@ -176,72 +179,58 @@
 				</div>
 				<div class="col-sm-9">
 
-					<h4 class="thumbnail text-center">
-						<%= best_in_place @player, :inspiration, inner_class: 'form-control input-sm' %>
-						<small>
-							Inspiration
-						</small>
-					</h4>
+					<div class="row">
+						<div class="col-md-4">
+							<h4 class="thumbnail text-center">
+								<%= best_in_place @player, :inspiration, inner_class: 'form-control input-sm' %>
+								<br>
+								<small>
+									Inspiration
+								</small>
+							</h4>
+						</div>
+						<div class="col-md-4">
+							<h4 class="thumbnail text-center">
+								<%= best_in_place @player, :proficiency_bonus, inner_class: 'form-control input-sm' %>
+								<br>
+								<small>
+									Prof. Bonus
+								</small>
+							</h4>
+						</div>
+						<div class="col-md-4">
+							<h4 class="thumbnail text-center">
+								<%#= best_in_place @player, :proficiency_bonus, inner_class: 'form-control input-sm' %>
+								#
+								<br>
+								<small>
+									Passive Percep.
+								</small>
+							</h4>
+						</div>
+					</div>
 
-					<h4 class="thumbnail text-center">
-						<%= best_in_place @player, :proficiency_bonus, inner_class: 'form-control input-sm' %>
-						<small>
-							Proficiency Bonus
-						</small>
-					</h4>
-
-					<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-						<div class="panel panel-default">
-							<a class="panel-heading text-center small btn btn-default btn-block btn-sm" id="headingOne" role="tab" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-								Saving Throws
-							</a>
-							<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+					<div class="row">
+						<div class="col-md-6">
+							<div id="modifiers" class="panel panel-default">
+								<header class="panel-heading">
+									<h4 class="panel-title">Saving Throws</h4>
+								</header>
 								<table class="table table-striped table-condensed">
 									<tbody class="small">
-										<% MODIFIERS.each do |modifier| %>
-										<tr>
-											<td>
-												<%= check_box_tag "mod_#{modifier}_prof", true, @player.is_proficient_in_mod?(modifier), disabled: true %>
-											</td>
-											<td>
-												<span class="rest-in-place" data-attribute="<%= "mod_#{modifier}" %>">
-													<%= @player.send("mod_#{modifier}") %>
-												</span>
-												<%= "+ " + @player.proficiency_bonus.to_s if @player.send("mod_#{modifier}_prof") %>
-											</td>
-											<td>
-												<%= content_tag :strong, modifier %>
-											</td>
-										</tr>
-										<% end %>
+										<%= render partial: 'players/modifiers/modifier', collection: MODIFIERS, as: :modifier %>
 									</tbody>
 								</table>
 							</div>
 						</div>
-						<div class="panel panel-default">
-							<a class="panel-heading text-center small btn btn-default btn-block btn-sm" id="headingTwo" role="tab" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-								Skills
-							</a>
-							<div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+						<div class="col-md-6">
+							<div class="panel panel-default">
+								<header class="panel-heading">
+									<h4 class="panel-title">Skills</h4>
+								</header>
 								<table class="table table-striped table-condensed">
 									<tbody class="small">
-
-										<%=  %>
-
-										<% SKILLS.each do |skill| %>
-										<tr>
-											<td>
-												<%= check_box_tag "skill_#{skill['name']}_prof", true, @player.is_proficient_in_skill?(skill['name']), disabled: true %>
-											</td>
-											<td>
-												<%= @player.send(skill['name']) %>
-											</td>
-											<td>
-												<%= content_tag :strong, skill['name'] %>
-												(<%= skill['modifier'][0..2] %>)
-											</td>
-										</tr>
-										<% end %>
+										<%= render partial: 'players/skills/skill', collection: SKILLS, as: :skill %>
 									</tbody>
 								</table>
 							</div>
@@ -254,26 +243,7 @@
 	</div>
 
 	<section id="spells">
-		<h3>
-			Spells
-			<%= link_to raw('<i class="fa fa-plus"></i>'), new_player_spell_path(@player), data: { toggle: :modal, target: '#defaultModal' } %>
-		</h3>
-		<div id="levels" class="row">
-
-			<div class="hidden-xs">
-				<div class="row">
-					<% @player.player_spells.group_by(&:level).each do |level| %>
-					<%= render 'player_spells/levels/level', level: level %>
-					<% end %>
-				</div>
-			</div>
-
-			<div class="vidible-xs-block">
-				<%= render 'player_spells/levels/carousel' %>
-			</div>
-
-		</div>
-
+		<%= render template: 'player_spells/index' %>
 	</section>
 
 </div>
