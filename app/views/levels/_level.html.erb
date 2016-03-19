@@ -1,0 +1,18 @@
+<div class="col-xs-12 level">
+	<div class="panel <%= spell_level_panel_class(level[0]) %>">
+		<header class="panel-heading">
+			<%= content_tag :span, level[1].count, class: 'badge pull-right' %>
+			<h4 class="panel-title">
+				<%= spell_level level[0] %>
+			</h4>
+		</header>
+		<div class="list-grpup">
+			<% level[1].each do |spell| %>
+			<%= link_to player_spell_path(@player, spell.spell), class: (spell.available ? 'list-group-item' : 'list-group-item disabled'), data: { toggle: :modal, target: '#defaultModal' } do %>
+			<%= content_tag :strong, spell.spell.name  %>
+			<%= content_tag :small, spell.spell.casting_time, class: "pull-right label #{spell.spell.casting_time_label_class}" %>
+			<% end %>
+			<% end %>
+		</div>
+	</div>
+</div>

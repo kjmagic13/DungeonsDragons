@@ -21,3 +21,31 @@
 		column-count: 3;
 	}
 }
+
+// carousel
+#carousel-spell-levels {
+
+	margin: 20px;
+
+
+	.carousel-indicators {
+
+		position: relative;
+		margin: 0 auto -20px;
+		left:inherit;
+
+		@media (min-width: 768px) { display: none; }
+		top: -25px;
+
+		li {
+			border: 1px solid #000;
+			width: 1em;
+			height: 1em;
+			&.active {
+				background: #158cba;
+			}
+		}
+
+	}
+
+}

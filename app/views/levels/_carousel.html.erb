@@ -1,0 +1,31 @@
+<div id="carousel-spell-levels" class="carousel slide" data-ride="carousel" data-interval="false">
+
+	<!-- Indicators -->
+	<ol class="carousel-indicators">
+		<% @player.player_spells.group_by(&:level).each_with_index do |level, index| %>
+		<%= content_tag :li, nil, data: { slide_to: index, target: '#carousel-spell-levels' }, class: (index == 0 ? 'active' : nil) %>
+		<% end %>
+	</ol>
+
+	<!-- Wrapper for slides -->
+	<div class="carousel-inner" role="listbox">
+		<% @player.player_spells.group_by(&:level).each_with_index do |level, index| %>
+		<div class="item <%= (index == 0 ? 'active' : nil) %>">
+			<%= render 'levels/level', level: level %>
+		</div>
+		<% end %>
+	</div>
+
+	<% if false %>
+	<!-- Controls -->
+	<a class="left carousel-control" href="#carousel-spell-levels" role="button" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		<span class="sr-only">Previous</span>
+	</a>
+	<a class="right carousel-control" href="#carousel-spell-levels" role="button" data-slide="next">
+		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		<span class="sr-only">Next</span>
+	</a>
+	<% end %>
+
+</div>
