@@ -12,5 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require rest_in_place
 //= require_tree .
+//= require best_in_place
+
+$(document).ready(function($) {
+	$(".best_in_place").best_in_place();
+});

@@ -4,8 +4,8 @@
 
 $ ->
 
-	# $('#rip-armor').bind 'success.rest-in-place', (event, data) ->
-	# 	alert 'anything?'
+	# $('.best_in_place').bind 'ajax:success', (event, data) ->
+	# 	console.log event
 	# 	return
 
 	$('#defaultModal').on 'shown.bs.modal', ->

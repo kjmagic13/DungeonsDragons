@@ -45,5 +45,5 @@ group :development do
   gem 'spring'
 end
 
-gem 'rest_in_place'
+gem 'best_in_place'
 gem 'yaml_db'

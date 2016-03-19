@@ -4,7 +4,7 @@
 	<div class="row">
 		<div class="col-sm-5 text-center">
 			<h3>
-				<%= rest_in_place @player, :name %>
+				<%= best_in_place @player, :name, inner_class: 'form-control input-sm' %>
 			</h3>
 			<p class="btn-group" role="group">
 				<%= link_to 'Rest', rest_player_path(@player), class: 'btn btn-sm btn-default' %>
@@ -17,33 +17,33 @@
 					<tr>
 						<td>
 							<strong>Class:</strong><br>
-							<%= rest_in_place @player, :class_name %>
+							<%= best_in_place @player, :class_name, inner_class: 'form-control input-sm' %>
 						</td>
 						<td>
 							<strong>Level:</strong><br>
-							<%= rest_in_place @player, :rank %>
+							<%= best_in_place @player, :rank, inner_class: 'form-control input-sm' %>
 						</td>
 						<td>
 							<strong>Hit Points:</strong><br>
 							<center>
-								<%= rest_in_place @player, :hp, :input, true %>
+								<%= best_in_place @player, :hp, inner_class: 'form-control input-sm' %>
 								/
-								<%= rest_in_place @player, :hp_max, :input, true %>
+								<%= best_in_place @player, :hp_max, inner_class: 'form-control input-sm' %>
 							</center>
 						</td>
 					</tr>
 					<tr>
 						<td>
 							<strong>Race:</strong><br>
-							<%= rest_in_place @player, :race %>
+							<%= best_in_place @player, :race, inner_class: 'form-control input-sm' %>
 						</td>
 						<td>
 							<strong>Alignment:</strong><br>
-							<%= rest_in_place @player, :alignment %>
+							<%= best_in_place @player, :alignment, inner_class: 'form-control input-sm' %>
 						</td>
 						<td>
 							<strong>Experience Points:</strong><br>
-							<%= rest_in_place @player, :xp %>
+							<%= best_in_place @player, :xp, inner_class: 'form-control input-sm' %>
 						</td>
 					</tr>
 				</tbody>
@@ -59,7 +59,7 @@
 					<div class="row text-center">
 						<div class="col-xs-4">
 							<h4 class="thumbnail">
-								<%= rest_in_place @player, :armor, :input, true %><br>
+								<%= best_in_place @player, :armor, inner_class: 'form-control input-sm' %><br>
 								<small>
 									Armor
 								</small>
@@ -67,7 +67,7 @@
 						</div>
 						<div class="col-xs-4">
 							<h4 class="thumbnail">
-								<%= rest_in_place @player, :initiative, :input, true %><br>
+								<%= best_in_place @player, :initiative, inner_class: 'form-control input-sm' %><br>
 								<small>
 									Initiaitve
 								</small>
@@ -75,7 +75,7 @@
 						</div>
 						<div class="col-xs-4">
 							<h4 class="thumbnail">
-								<%= rest_in_place @player, :speed, :input, true %><br>
+								<%= best_in_place @player, :speed, inner_class: 'form-control input-sm' %><br>
 								<small>
 									Speed
 								</small>
@@ -105,13 +105,13 @@
 					<div class="thumbnail">
 						<dl class="caption">
 							<dt>Personality</dt>
-							<dd><%= rest_in_place @player, :personality, :textarea %></dd>
+							<dd><%= @player.personality %></dd>
 							<dt>Ideals</dt>
-							<dd><%= rest_in_place @player, :ideals, :textarea %></dd>
+							<dd><%= @player.ideals %></dd>
 							<dt>Bonds</dt>
-							<dd><%= rest_in_place @player, :bonds, :textarea %></dd>
+							<dd><%= @player.bonds %></dd>
 							<dt>Flaws</dt>
-							<dd><%= rest_in_place @player, :flaws, :textarea %></dd>
+							<dd><%= @player.flaws %></dd>
 						</dl>
 					</div>
 				</div>
@@ -125,7 +125,7 @@
 					<div class="row text-center">
 						<div class="col-xs-4 col-sm-12">
 							<h5 class="thumbnail">
-								<%= rest_in_place @player, :strength, :input, true %><br>
+								<%= best_in_place @player, :strength, inner_class: 'form-control input-sm' %><br>
 								<small>
 									Strength
 								</small>
@@ -133,7 +133,7 @@
 						</div>
 						<div class="col-xs-4 col-sm-12">
 							<h5 class="thumbnail">
-								<%= rest_in_place @player, :dexterity, :input, true %><br>
+								<%= best_in_place @player, :dexterity, inner_class: 'form-control input-sm' %><br>
 								<small>
 									Dexterity
 								</small>
@@ -141,7 +141,7 @@
 						</div>
 						<div class="col-xs-4 col-sm-12">
 							<h5 class="thumbnail">
-								<%= rest_in_place @player, :constitution, :input, true %><br>
+								<%= best_in_place @player, :constitution, inner_class: 'form-control input-sm' %><br>
 								<small>
 									Constitution
 								</small>
@@ -149,7 +149,7 @@
 						</div>
 						<div class="col-xs-4 col-sm-12">
 							<h5 class="thumbnail">
-								<%= rest_in_place @player, :intelligence, :input, true %><br>
+								<%= best_in_place @player, :intelligence, inner_class: 'form-control input-sm' %><br>
 								<small>
 									Intelligence
 								</small>
@@ -157,7 +157,7 @@
 						</div>
 						<div class="col-xs-4 col-sm-12">
 							<h5 class="thumbnail">
-								<%= rest_in_place @player, :wisdom, :input, true %><br>
+								<%= best_in_place @player, :wisdom, inner_class: 'form-control input-sm' %><br>
 								<small>
 									Wisdom
 								</small>
@@ -165,7 +165,7 @@
 						</div>
 						<div class="col-xs-4 col-sm-12">
 							<h5 class="thumbnail">
-								<%= rest_in_place @player, :charisma, :input, true %><br>
+								<%= best_in_place @player, :charisma, inner_class: 'form-control input-sm' %><br>
 								<small>
 									Charisma
 								</small>
@@ -177,14 +177,14 @@
 				<div class="col-sm-9">
 
 					<h4 class="thumbnail text-center">
-						<%= rest_in_place @player, :inspiration, :input, true %>
+						<%= best_in_place @player, :inspiration, inner_class: 'form-control input-sm' %>
 						<small>
 							Inspiration
 						</small>
 					</h4>
 
 					<h4 class="thumbnail text-center">
-						<%= rest_in_place @player, :proficiency_bonus, :input, true %>
+						<%= best_in_place @player, :proficiency_bonus, inner_class: 'form-control input-sm' %>
 						<small>
 							Proficiency Bonus
 						</small>
