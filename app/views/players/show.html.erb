@@ -263,6 +263,7 @@
 			<div class="col-sm-12 level">
 				<div class="panel <%= spell_level_panel_class(level[0]) %>">
 					<header class="panel-heading">
+						<%= content_tag :span, level[1].count, class: 'badge pull-right' %>
 						<h4 class="panel-title">
 							<%= spell_level level[0] %>
 						</h4>

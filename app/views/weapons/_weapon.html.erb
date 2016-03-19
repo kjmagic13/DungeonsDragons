@@ -1,9 +1,9 @@
 <tr class="text-center">
-	<td class="text-muted">
-		<i class="fa fa-bars"></i>
+	<td class="text-muted text-left">
+		<i class="fa fa-fw fa-arrows-v"></i>
 	</td>
 	<td>
-		<%= weapon.name %>
+		<%= link_to weapon.name, edit_player_weapon_path(@player, weapon), data: { toggle: :modal, target: '#defaultModal' } %>
 	</td>
 	<td>
 		<%= weapon.damage %>
@@ -11,10 +11,7 @@
 	<td>
 		<%= weapon.attack %>
 	</td>
-	<td>
-		<%= link_to raw('<i class="fa fa-edit"></i>'), edit_player_weapon_path(@player, weapon), data: { toggle: :modal, target: '#defaultModal' } %>
-	</td>
-	<td>
-		<%= link_to raw('<i class="fa fa-remove"></i>'), [@player, weapon], method: :delete, data: { confirm: 'Are you sure?' } %>
+	<td class="text-right">
+		<%= link_to raw('<i class="fa fa-fw fa-remove text-warning"></i>'), [@player, weapon], method: :delete, data: { confirm: 'Are you sure?' } %>
 	</td>
 </tr>

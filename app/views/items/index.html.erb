@@ -1,13 +1,15 @@
 <% if @player.items.any? %>
 
 <table class="table table-striped table-condensed">
-	<tbody>
+	<thead>
 		<tr>
 			<th></th>
-			<th class="text-center">Quantity</th>
 			<th class="text-center">Name</th>
-			<th colspan="2"></th>
+			<th class="text-center">Qty.</th>
+			<th></th>
 		</tr>
+	</thead>
+	<tbody>
 		<%= render @player.items %>
 	</tbody>
 </table>

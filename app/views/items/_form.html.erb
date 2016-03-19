@@ -17,16 +17,16 @@
 	<%= f.hidden_field :player_id %>
 
 	<div class="row">
-		<div class="col-sm-3">
-			<div class="form-group">
-				<%= f.label :quantity %>
-				<%= f.number_field :quantity, class: 'form-control' %>
-			</div>
-		</div>
 		<div class="col-sm-9">
 			<div class="form-group">
 				<%= f.label :name %>
 				<%= f.text_field :name, class: 'form-control' %>
+			</div>
+		</div>
+		<div class="col-sm-3">
+			<div class="form-group">
+				<%= f.label :quantity %>
+				<%= f.number_field :quantity, class: 'form-control' %>
 			</div>
 		</div>
 	</div>
