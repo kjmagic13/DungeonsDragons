@@ -35,14 +35,12 @@ class Player < ActiveRecord::Base
 	end
 
 	SKILLS.each do |skill|
-		skill_name = skill['name']
-		modifier = skill['modifier']
 		# def moded_Acrobatics
-		define_method(skill_name) do
-			if is_proficient_in_skill?(skill_name)
-				self.send("mod_#{modifier}") + self.proficiency_bonus
+		define_method(skill.name) do
+			if is_proficient_in_skill?(skill.name)
+				self.send("mod_#{skill.modifier}") + self.proficiency_bonus
 			else
-				self.send("mod_#{modifier}")
+				self.send("mod_#{skill.modifier}")
 			end
 
 		end

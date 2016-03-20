@@ -1,13 +1,13 @@
 <tr>
 	<td>
-		<%= best_in_place @player, "skill_#{skill['name'].parameterize.underscore}_prof".to_sym, as: :checkbox, class: 'reload-player', collection: [raw("<i class='fa fa-fw fa-circle-o'></i>"), raw("<i class='fa fa-fw fa-check-circle-o'></i>")] %>
-		<%#= check_box_tag "skill_#{skill['name']}_prof", true, @player.is_proficient_in_skill?(skill['name']), disabled: true %>
+		<%= best_in_place @player, "skill_#{skill.name.parameterize.underscore}_prof".to_sym, as: :checkbox, class: 'reload-player', collection: [raw("<i class='fa fa-fw fa-circle-o'></i>"), raw("<i class='fa fa-fw fa-check-circle-o'></i>")] %>
+		<%#= check_box_tag "skill_#{skill.name}_prof", true, @player.is_proficient_in_skill?(skill.name), disabled: true %>
 	</td>
 	<td>
-		<%= @player.send(skill['name']) %>
+		<%= @player.send(skill.name) %>
 	</td>
 	<td>
-		<%= content_tag :strong, skill['name'] %>
+		<%= content_tag :strong, skill.name %>
 		(<%= skill['modifier'][0..2] %>)
 	</td>
 </tr>
