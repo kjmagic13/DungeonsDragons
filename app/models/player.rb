@@ -6,7 +6,8 @@ class Player < ActiveRecord::Base
 	has_many :weapons, dependent: :destroy
 	has_many :items, dependent: :destroy
 
-	accepts_nested_attributes_for :player_spells, allow_destroy: true, reject_if: proc { |s| s['spell_id'].blank? }
+	# accepts_nested_attributes_for :player_spells, allow_destroy: true, reject_if: proc { |s| s['spell_id'].blank? }
+	validates :rank, :xp, :hp, :hp_max, :armor, :initiative, :speed, :strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma, :inspiration, :proficiency_bonus, :mod_Strength, :mod_Dexterity, :mod_Constitution, :mod_Intelligence, :mod_Wisdom, :mod_Charisma, numericality: { only_integer: true }
 
 	default_scope { includes(:spells, :weapons, :items) }
 
