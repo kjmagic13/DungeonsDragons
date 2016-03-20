@@ -18,6 +18,14 @@ class PlayersController < ApplicationController
 		redirect_to @player
 	end
 
+	def get_modifiers
+		render template: 'players/modifiers/index', layout: false
+	end
+
+	def get_skills
+		render template: 'players/skills/index', layout: false
+	end
+
 	# GET /players/new
 	def new
 		@player = Player.new

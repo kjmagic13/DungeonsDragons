@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 	resources :players do
 		member do
 			get 'rest'
+			get 'get-modifiers'
+			get 'get-skills'
 		end
 
 		resources :spells, except: [], controller: :player_spells do

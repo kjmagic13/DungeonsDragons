@@ -2,13 +2,18 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+
 $ ->
 
-	# $('.best_in_place').bind 'ajax:success', (event, data) ->
-	# 	if $(this).hasClass('reload-modifiers')
-	# 		$('#modifiers').load $(this).data('bip-url')+'/get-modifiers'
-	# 		return
-	# 	return
+	reloadPlayer = ($elem) ->
+		if $elem.hasClass('reload-player')
+			$('#modifiers').load $elem.data('bip-url') + '/get-modifiers'
+			$('#skills').load $elem.data('bip-url') + '/get-skills'
+		return
+
+	$('body').on 'ajax:success', '.best_in_place', (event, data) ->
+		reloadPlayer $(this)
+		return
 
 	$('#defaultModal').on 'shown.bs.modal', ->
 		$('.focus-here').focus()

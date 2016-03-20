@@ -1,6 +1,7 @@
 <tr>
 	<td>
-		<%= check_box_tag "skill_#{skill['name']}_prof", true, @player.is_proficient_in_skill?(skill['name']), disabled: true %>
+		<%= best_in_place @player, "skill_#{skill['name'].parameterize.underscore}_prof".to_sym, as: :checkbox, class: 'reload-player', collection: [raw("<i class='fa fa-fw fa-circle-o'></i>"), raw("<i class='fa fa-fw fa-check-circle-o'></i>")] %>
+		<%#= check_box_tag "skill_#{skill['name']}_prof", true, @player.is_proficient_in_skill?(skill['name']), disabled: true %>
 	</td>
 	<td>
 		<%= @player.send(skill['name']) %>
