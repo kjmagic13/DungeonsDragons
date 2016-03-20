@@ -1,6 +1,6 @@
 class Player < ActiveRecord::Base
 
-	include PlayerCreation
+	# include PlayerCreation
 
 	has_many :player_spells, dependent: :destroy
 	has_many :spells, through: :player_spells
