@@ -12,36 +12,28 @@
 <% end %>
 
 <div class="form-group">
-	<%= f.label :name %><br>
+	<%= f.label :name %>
 	<%= f.text_field :name, class: 'form-control' %>
 </div>
 
-<div class="row">
-	<div class="col-sm-4">
-		<div class="form-group">
-			<% MODIFIERS.each do |modifier| %>
-			<div class="">
-				<%= f.check_box "mod_#{modifier}_prof".to_sym %>
-				<%= f.label "mod_#{modifier}_prof".to_sym, modifier %>
-			</div>
-			<% end %>
-		</div>
-	</div>
-	<div class="col-sm-4">
-		<div class="form-group">
-			<% SKILLS.each do |skill| %>
-			<div class="">
-				<%= f.check_box "skill_#{skill['name'].parameterize.underscore}_prof".to_sym %>
-				<%= f.label "skill_#{skill['name'].parameterize.underscore}_prof".to_sym, skill['name'] %>
-			</div>
-			<% end %>
-		</div>
-	</div>
+<div class="form-group">
+	<%= f.label :personality %>
+	<%= f.text_area :personality, rows: 4, class: 'form-control' %>
+</div>
+<div class="form-group">
+	<%= f.label :ideals %>
+	<%= f.text_area :ideals, rows: 4, class: 'form-control' %>
+</div>
+<div class="form-group">
+	<%= f.label :bonds %>
+	<%= f.text_area :bonds, rows: 4, class: 'form-control' %>
+</div>
+<div class="form-group">
+	<%= f.label :flaws %>
+	<%= f.text_area :flaws, rows: 4, class: 'form-control' %>
 </div>
 
 <div class="actions">
-	<p>
-		<%= f.submit %>
-	</p>
+	<%= f.submit nil, class: 'btn btn-primary' %>
 </div>
 <% end %>

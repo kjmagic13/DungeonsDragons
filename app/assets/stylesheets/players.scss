@@ -9,3 +9,9 @@
 		}
 	}
 }
+
+.best_in_place {
+	cursor: pointer;
+	&:not([data-bip-type="checkbox"]) { border-bottom: 1px dotted #000; }
+	.form-control { text-align: center;}
+}
