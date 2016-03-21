@@ -8,12 +8,21 @@
 		<li><%= message %></li>
 		<% end %>
 	</ul>
+
 </div>
 <% end %>
 
 <div class="form-group">
 	<%= f.label :name %>
 	<%= f.text_field :name, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+	<%= f.check_box :use_standard_abilities, checked: true %>
+	<%= f.label :use_standard_abilities, 'Use the "Standard Set"' %>
+	<a href="#" data-toggle="tooltip" title='The "Standard Set" for abilities is: 15,14,13,12,10,8. Otherwise sum of best 3/4 6-sided die.'>
+		<i class="fa fa-question-circle"></i>
+	</a>
 </div>
 
 <div class="form-group">

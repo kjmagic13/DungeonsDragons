@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160319000147) do
+ActiveRecord::Schema.define(version: 20160321135825) do
 
   create_table "items", force: :cascade do |t|
     t.integer  "player_id"
@@ -38,11 +38,11 @@ ActiveRecord::Schema.define(version: 20160319000147) do
 
   create_table "players", force: :cascade do |t|
     t.string   "name"
-    t.integer  "rank"
+    t.integer  "rank",                       default: 1
     t.string   "class_name"
     t.string   "race"
     t.string   "alignment"
-    t.integer  "xp"
+    t.integer  "xp",                         default: 0
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
     t.integer  "hp",                         default: 0
@@ -56,10 +56,10 @@ ActiveRecord::Schema.define(version: 20160319000147) do
     t.integer  "intelligence",               default: 0
     t.integer  "wisdom",                     default: 0
     t.integer  "charisma",                   default: 0
-    t.text     "personality",                default: "..."
-    t.text     "ideals",                     default: "..."
-    t.text     "bonds",                      default: "..."
-    t.text     "flaws",                      default: "..."
+    t.text     "personality"
+    t.text     "ideals"
+    t.text     "bonds"
+    t.text     "flaws"
     t.integer  "inspiration",                default: 0
     t.integer  "proficiency_bonus",          default: 0
     t.integer  "mod_Strength",               default: 0
@@ -68,30 +68,30 @@ ActiveRecord::Schema.define(version: 20160319000147) do
     t.integer  "mod_Intelligence",           default: 0
     t.integer  "mod_Wisdom",                 default: 0
     t.integer  "mod_Charisma",               default: 0
-    t.boolean  "mod_Strength_prof"
-    t.boolean  "mod_Dexterity_prof"
-    t.boolean  "mod_Constitution_prof"
-    t.boolean  "mod_Intelligence_prof"
-    t.boolean  "mod_Wisdom_prof"
-    t.boolean  "mod_Charisma_prof"
-    t.boolean  "skill_acrobatics_prof"
-    t.boolean  "skill_animal_handling_prof"
-    t.boolean  "skill_arcana_prof"
-    t.boolean  "skill_athletics_prof"
-    t.boolean  "skill_deception_prof"
-    t.boolean  "skill_history_prof"
-    t.boolean  "skill_insight_prof"
-    t.boolean  "skill_intimidation_prof"
-    t.boolean  "skill_investigation_prof"
-    t.boolean  "skill_medicine_prof"
-    t.boolean  "skill_nature_prof"
-    t.boolean  "skill_perception_prof"
-    t.boolean  "skill_performance_prof"
-    t.boolean  "skill_persuasion_prof"
-    t.boolean  "skill_religion_prof"
-    t.boolean  "skill_sleight_of_hand_prof"
-    t.boolean  "skill_stealth_prof"
-    t.boolean  "skill_survival_prof"
+    t.boolean  "mod_Strength_prof",          default: false
+    t.boolean  "mod_Dexterity_prof",         default: false
+    t.boolean  "mod_Constitution_prof",      default: false
+    t.boolean  "mod_Intelligence_prof",      default: false
+    t.boolean  "mod_Wisdom_prof",            default: false
+    t.boolean  "mod_Charisma_prof",          default: false
+    t.boolean  "skill_acrobatics_prof",      default: false
+    t.boolean  "skill_animal_handling_prof", default: false
+    t.boolean  "skill_arcana_prof",          default: false
+    t.boolean  "skill_athletics_prof",       default: false
+    t.boolean  "skill_deception_prof",       default: false
+    t.boolean  "skill_history_prof",         default: false
+    t.boolean  "skill_insight_prof",         default: false
+    t.boolean  "skill_intimidation_prof",    default: false
+    t.boolean  "skill_investigation_prof",   default: false
+    t.boolean  "skill_medicine_prof",        default: false
+    t.boolean  "skill_nature_prof",          default: false
+    t.boolean  "skill_perception_prof",      default: false
+    t.boolean  "skill_performance_prof",     default: false
+    t.boolean  "skill_persuasion_prof",      default: false
+    t.boolean  "skill_religion_prof",        default: false
+    t.boolean  "skill_sleight_of_hand_prof", default: false
+    t.boolean  "skill_stealth_prof",         default: false
+    t.boolean  "skill_survival_prof",        default: false
   end
 
   create_table "spells", force: :cascade do |t|

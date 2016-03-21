@@ -1,13 +1,9 @@
 <tr>
 	<td>
-
 		<%= best_in_place @player, "mod_#{modifier}_prof".to_sym, as: :checkbox, class: 'reload-player', collection: [raw("<i class='fa fa-fw fa-circle-o'></i>"), raw("<i class='fa fa-fw fa-check-circle-o'></i>")] %>
-
 	</td>
 	<td>
-
 		<%= best_in_place @player, "mod_#{modifier}".to_sym, class: 'reload-player', display_as: "moded_#{modifier}".to_sym, inner_class: 'form-control input-sm' %>
-
 	</td>
 	<td>
 		<%= content_tag :strong, modifier %>
