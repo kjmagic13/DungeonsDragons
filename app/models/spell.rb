@@ -6,9 +6,9 @@ class Spell < ActiveRecord::Base
 
 	has_many :player_spells, dependent: :destroy
 
-	def link_roll20
-		URI.encode "https://roll20.net/compendium/dnd5e/Spells:#{name}"
-	end
+	# def link_roll20
+	# 	URI.encode "https://roll20.net/compendium/dnd5e/Spells:#{name}"
+	# end
 
 	# def link_dnd_spells
 	# 	URI.encode "https://www.dnd-spells.com/spell/#{name.parameterize}"+'#page-wrapper'

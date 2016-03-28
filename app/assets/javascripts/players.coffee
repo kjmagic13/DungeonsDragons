@@ -5,6 +5,9 @@
 
 $ ->
 
+	$('[data-toggle="popover"]').popover()
+	$('[data-toggle="tooltip"]').tooltip()
+
 	reloadPlayer = ($elem) ->
 		if $elem.hasClass('reload-player')
 			$('#modifiers').load $elem.data('bip-url') + '/get-modifiers'

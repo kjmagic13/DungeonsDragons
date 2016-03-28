@@ -40,7 +40,7 @@
 					<tr>
 						<td>
 							<strong>Race:</strong><br>
-							<%= best_in_place @player, :race, inner_class: 'form-control input-sm' %>
+							<%= best_in_place @player, :race, as: :select, collection: RACES.map{ |r| [r.name, r.name] }, inner_class: 'form-control input-sm' %>
 						</td>
 						<td>
 							<strong>Alignment:</strong><br>
