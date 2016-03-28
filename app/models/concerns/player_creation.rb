@@ -4,7 +4,7 @@ module PlayerCreation
 	attr_accessor :use_standard_abilities
 
 	included do
-		before_create :set_abilities
+		before_create :set_abilities, :set_speed
 	end
 
 	module ClassMethods
@@ -29,6 +29,12 @@ module PlayerCreation
 			ABILITIES.each do |ability|
 				self.send "#{ability.underscore}=", Dice.best_x_of_yDz(3,4,6)
 			end
+		end
+	end
+
+	def set_speed
+		RACES.each do |race|
+			self.speed = race.speed if self.race == race.name
 		end
 	end
 
